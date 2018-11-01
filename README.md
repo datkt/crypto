@@ -54,6 +54,16 @@ or
 val kp = keyPair()
 ```
 
+### `sign(message: ByteArray, secretKey: ByteArray): ByteArray`
+
+Generates a signature for a given message and secret key.
+
+```kotlin
+val ( publicKey, secretKey ) = keyPair()
+val message = "hello".toUtf8() // convert to ByteArray
+val signature = sign(message, secretKey)
+```
+
 ## Tests
 
 To run the tests, make sure the `crypto.klib` Kotlin library is built by
