@@ -40,6 +40,22 @@ fun main(args: Array<String>) {
     t.end()
   }
 
+  test("sign(message: ByteArray, secretKey: ByteArray): ByteArray") { t ->
+    val seed = Seed('h', 'e', 'l', 'l', 'o')
+    val kp = keyPair(seed.buffer)
+
+    t.throws({ sign(ByteArray(0), ByteArray(0)) }, Error::class)
+    t.throws({ sign(ByteArray(0), kp.secretKey) }, Error::class)
+    t.throws({ sign("".toUtf8(), kp.secretKey) }, Error::class)
+
+    t.equal(
+      toHexString(sign("hello".toUtf8(), kp.secretKey)),
+      "2bec9e6f4f388ff390aa276365e6e62ba53d8ebbf1334c749ca32cbb47484835055a493743e191792bbd12da22957c5a72831142a7f0df502d0c733b4ceee20f"
+    )
+
+    t.end()
+  }
+
   collect()
 }
 
