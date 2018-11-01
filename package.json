@@ -1,0 +1,25 @@
+{
+  "name": "@datkt/crypto",
+  "version": "0.0.1",
+  "description": "Various cryptographic function for datkt",
+  "main": "index.kt",
+  "scripts": {
+    "build": "konanc src/*.kt -r node_modules/@datkt -l sodium/sodium -p library -o crypto",
+    "install": "npm run build",
+    "test": "konanc -r node_modules/@datkt -l sodium/sodium -l tape/tape src/*.kt test/*.kt -o test && ./test.kexe"
+  },
+  "keywords": [
+    "datkt",
+    "crypto",
+    "kotlin"
+  ],
+  "author": "Joseph Werle <werle@littlstar.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@datkt/sodium": "^0.4.0",
+    "@datkt/uint64be": "^1.0.0"
+  },
+  "devDependencies": {
+    "@datkt/tape": "^0.5.1"
+  }
+}
