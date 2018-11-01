@@ -49,3 +49,34 @@ fun keyPair(seed: ByteArray? = null): KeyPair {
 
   return KeyPair(publicKey, secretKey)
 }
+
+/**
+ * Generates a signature for a given message and secret key.
+ */
+fun sign(message: ByteArray, secretKey: ByteArray): ByteArray {
+  val signature = ByteArray(crypto_sign_BYTES.toInt())
+
+  if (0 == message.size) {
+    throw Error("Message cannot be empty.")
+  }
+
+  if (64 != secretKey.size) {
+    throw Error("Secret key must be 64 bytes.")
+  }
+
+  signature.usePinned { signaturePointer ->
+    secretKey.usePinned { secretKeyPointer ->
+      message.usePinned { messagePointer ->
+        crypto_sign_detached(
+          signaturePointer.addressOf(0) as CValuesRef<UByteVar>,
+          null,
+          messagePointer.addressOf(0) as CValuesRef<UByteVar>,
+          message.size.convert(),
+          secretKeyPointer.addressOf(0) as CValuesRef<UByteVar>)
+      }
+    }
+  }
+
+
+  return signature
+}
