@@ -1,6 +1,6 @@
 CWD ?= $(shell pwd)
 NODE_MODULES ?= $(CWD)/node_modules
-KCCONF ?= $(NODE_MODULES)/.bin/konanc-config
+KCCONF ?= konanc-config
 DATKT ?= $(NODE_MODULES)/@datkt
 
 KCFLAGS += -r $(DATKT)
