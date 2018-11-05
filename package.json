@@ -1,6 +1,6 @@
 {
   "name": "@datkt/crypto",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Various cryptographic function for datkt",
   "main": "index.kt",
   "scripts": {
