@@ -1,0 +1,4 @@
+library[] = crypto
+library[] = tape/tape
+repo[] = "./node_modules/@datkt"
+repo[] = "./"
