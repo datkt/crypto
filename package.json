@@ -5,7 +5,7 @@
   "main": "index.kt",
   "scripts": {
     "build": "make",
-    "install": "make",
+    "postinstall": "make",
     "test": "make test"
   },
   "keywords": [
