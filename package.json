@@ -16,7 +16,7 @@
   "author": "Joseph Werle <werle@littlstar.com>",
   "license": "MIT",
   "dependencies": {
-    "@datkt/konanc-config": "^3.0.2",
+    "@datkt/konanc-config": "^3.1.0",
     "@datkt/sodium": "^0.5.0",
     "@datkt/uint64be": "^1.0.0"
   },
