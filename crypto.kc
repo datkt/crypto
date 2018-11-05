@@ -1,2 +1,2 @@
-library[] = sodium
-repo[] = "node_modules/@datkt/sodium"
+library[] = "sodium/sodium"
+repo[] = "node_modules/@datkt"
