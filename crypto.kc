@@ -1,0 +1,2 @@
+library[] = sodium
+repo[] = "node_modules/@datkt/sodium"
