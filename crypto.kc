@@ -1,4 +1,2 @@
-repo[] = "node_modules/@datkt"
-
-require[] = "sodium/sodium"
-library[] = "sodium/sodium"
+repo[] = "@datkt/sodium"
+library[] = "sodium"
