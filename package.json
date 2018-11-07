@@ -4,9 +4,9 @@
   "description": "Various cryptographic function for datkt",
   "main": "index.kt",
   "scripts": {
-    "build": "make",
-    "postinstall": "make",
-    "test": "make test"
+    "build": "konanc index.kt $(konanc-config -clr lib.kc) -p library -o crypto",
+    "postinstall": "npm run build",
+    "test": "konanc test.kt $(konanc-config -clr . test.kc) -o test.kexe && ./test.kexe"
   },
   "keywords": [
     "datkt",
@@ -16,10 +16,10 @@
   "author": "Joseph Werle <werle@littlstar.com>",
   "license": "MIT",
   "dependencies": {
-    "@datkt/sodium": "^0.5.0",
+    "@datkt/sodium": "^0.6.0",
     "@datkt/uint64be": "^1.0.0"
   },
   "devDependencies": {
-    "@datkt/tape": "^0.5.2"
+    "@datkt/tape": "^0.6.1"
   }
 }
