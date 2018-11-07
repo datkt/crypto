@@ -3,9 +3,9 @@ NODE_MODULES ?= $(CWD)/node_modules
 KCCONF ?= konanc-config
 DATKT ?= $(NODE_MODULES)/@datkt
 
-KCFLAGS += $(shell $(KCCONF) crypto.kc --repos --libs)
+KCFLAGS += $(shell $(KCCONF) -clr .)
 TEST_KCFLAGS += $(KCFLAGS)
-TEST_KCFLAGS += $(shell $(KCCONF) test.kc --repos --libs)
+TEST_KCFLAGS += $(shell $(KCCONF) -clr test.kc)
 
 KCC ?= konanc
 SRC ?= *.kt
