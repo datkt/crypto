@@ -1,2 +1,3 @@
-repo[] = "@datkt/sodium"
-library[] = "sodium"
+require = "./lib"
+library = "crypto"
+repo = "@datkt/crypto"
